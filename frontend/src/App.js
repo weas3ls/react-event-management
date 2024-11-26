@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { action as manipulateEventAction } from "./components/EventForm";
+import AuthenticationPage, { action as AuthAction } from "./pages/Authentication";
 import EditEventPage from "./pages/EditEvent";
 import ErrorPage from "./pages/Error";
 import EventDetailPage, { action as deleteEventAction, loader as eventDetailLoader } from "./pages/EventDetail";
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <HomePage />,
+            },
+            {
+                path: "auth",
+                element: <AuthenticationPage />,
+                action: AuthAction,
             },
             {
                 path: "events",
